@@ -171,6 +171,7 @@ class Calendar extends Component {
       days.push({ dayMoment, isPassive : true });
     }
 
+    const today = moment().startOf('day');
     return days.map((data, index) => {
       const { dayMoment, isPassive } = data;
       const isSelected    = !range && (dayMoment.unix() === dateUnix);
@@ -178,6 +179,7 @@ class Calendar extends Component {
       const isStartEdge    = range && checkStartEdge(dayMoment, range);
       const isEndEdge   = range && checkEndEdge(dayMoment, range);
       const isEdge        = isStartEdge || isEndEdge;
+      const isToday       = today.isSame(dayMoment);
 
       return (
         <DayCell
@@ -188,6 +190,7 @@ class Calendar extends Component {
           isEndEdge = { isEndEdge }
           isSelected={ isSelected || isEdge }
           isInRange={ isInRange }
+          isToday={ isToday }
           key={ index }
           onlyClasses = { onlyClasses }
           classNames = { classes }
