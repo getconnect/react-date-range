@@ -75,11 +75,9 @@ const defaultTheme = {
   },
 
   DayStartEdge : {
-    borderLeft : '2px solid #000'
   },
 
   DayEndEdge : {
-    borderRight : '2px solid #000'
   },
 
   DayInRange : {
