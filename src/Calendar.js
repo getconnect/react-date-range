@@ -185,6 +185,7 @@ class Calendar extends Component {
       const isInRange     = range && checkRange(dayMoment, range);
       const isStartEdge    = range && checkStartEdge(dayMoment, range);
       const isEndEdge   = range && checkEndEdge(dayMoment, range);
+      const isEdge = isStartEdge || isEndEdge;
       const isToday       = today.isSame(dayMoment);
       const isOutsideMinMax = isOusideMinMax(dayMoment, minDate, maxDate);
 
