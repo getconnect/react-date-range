@@ -108,7 +108,7 @@ class DateRange extends Component {
   }
 
   render() {
-    const { ranges, format, linkedCalendars, style, calendars, firstDayOfWeek, classNames, onlyClasses } = this.props;
+    const { ranges, format, linkedCalendars, style, calendars, firstDayOfWeek, minDate, maxDate } = this.props;
     const { range, link } = this.state;
     const { styles } = this;
 
@@ -136,7 +136,7 @@ class DateRange extends Component {
                 firstDayOfWeek={ firstDayOfWeek }
                 theme={ styles }
                 minDate={ minDate }
-                maxDate={ maxDate } 
+                maxDate={ maxDate }
                 onChange={ this.handleSelect.bind(this) } />
             );
           }

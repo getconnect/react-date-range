@@ -49,17 +49,20 @@ class DayCell extends Component {
 
   getStateStyles() {
     const { hover, active } = this.state;
-    const { isSelected, isInRange, isPassive, isStartEdge, isEndEdge, isToday } = this.props;
+    const { isSelected, isInRange, isPassive, isStartEdge, isEndEdge, isToday, isStartOfWeek, isEndOfWeek } = this.props;
     const { styles } = this;
 
-    const hoverStyle     = hover ? styles['DayHover'] : {};
-    const activeStyle    = active ? styles['DayActive'] : {};
-    const passiveStyle   = isPassive ? styles['DayPassive'] : {};
-    const startEdgeStyle = isStartEdge ? styles['DayStartEdge'] : {};
-    const endEdgeStyle   = isEndEdge ? styles['DayEndEdge'] : {};
-    const selectedStyle  = isSelected ? styles['DaySelected'] : {};
-    const inRangeStyle   = isInRange ? styles['DayInRange'] : {};
-    const todayStyle     = isToday ? styles['DayToday'] : {};
+    const hoverStyle        = hover ? styles['DayHover'] : {};
+    const activeStyle       = active ? styles['DayActive'] : {};
+    const passiveStyle      = isPassive ? styles['DayPassive'] : {};
+    const startEdgeStyle    = isStartEdge ? styles['DayStartEdge'] : {};
+    const endEdgeStyle      = isEndEdge ? styles['DayEndEdge'] : {};
+    const selectedStyle     = isSelected ? styles['DaySelected'] : {};
+    const inRangeStyle      = isInRange ? styles['DayInRange'] : {};
+    const startOfWeekStyle  = isStartOfWeek ? styles['DayStartOfWeek'] : {};
+    const endOfWeekStyle    = isEndOfWeek ? styles['DayEndOfWeek'] : {};
+    const todayStyle        = isToday ? styles['DayToday'] : {};
+
 
     return {
       ...todayStyle,
@@ -69,12 +72,14 @@ class DayCell extends Component {
       ...activeStyle,
       ...selectedStyle,
       ...startEdgeStyle,
-      ...endEdgeStyle
+      ...endEdgeStyle,
+      ...startOfWeekStyle,
+      ...endOfWeekStyle
     };
   }
 
   getClassNames() {
-    const { isSelected, isInRange, isPassive, isStartEdge, isEndEdge, isToday } = this.props;
+    const { isSelected, isInRange, isPassive, isStartEdge, isEndEdge, isToday, isStartOfWeek, isEndOfWeek } = this.props;
 
     let classNames = 'rdr-Day ';
     classNames = (isStartEdge) ? classNames + 'is-startEdge ' : classNames;
@@ -83,6 +88,8 @@ class DayCell extends Component {
     classNames = (isSelected) ? classNames + 'is-selected ' : classNames;
     classNames = (isInRange) ? classNames + 'is-inRange ' : classNames;
     classNames = (isPassive) ? classNames + 'is-passive ' : classNames;
+    classNames = (isStartOfWeek) ? classNames + 'is-startOfWeek ' : classNames;
+    classNames = (isEndOfWeek) ? classNames + 'is-endOfWeek ' : classNames;
 
     return classNames;
   }

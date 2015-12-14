@@ -179,6 +179,7 @@ class Calendar extends Component {
     const today = moment().startOf('day');
     return days.map((data, index) => {
       const { dayMoment, isPassive } = data;
+      const lastDayOfWeek   = dayMoment.clone().day(firstDayOfWeek).add(6, 'days').day();
       const isSelected      = !range && (dayMoment.unix() === dateUnix);
       const isInRange       = range && checkRange(dayMoment, range);
       const isStartEdge     = range && checkStartEdge(dayMoment, range);
@@ -186,6 +187,8 @@ class Calendar extends Component {
       const isEdge          = isStartEdge || isEndEdge;
       const isToday         = today.isSame(dayMoment);
       const isOutsideMinMax = isOusideMinMax(dayMoment, minDate, maxDate);
+      const isStartOfWeek   = firstDayOfWeek === dayMoment.day();
+      const isEndOfWeek     = lastDayOfWeek === dayMoment.day();
 
       return (
         <DayCell
@@ -197,8 +200,10 @@ class Calendar extends Component {
           isSelected={ isSelected || isEdge }
           isInRange={ isInRange }
           isToday={ isToday }
-          key={ index }
           isPassive = { isPassive || isOutsideMinMax }
+          isStartOfWeek = { isStartOfWeek }
+          isEndOfWeek = { isEndOfWeek }
+          key={ index }
         />
       );
     })
