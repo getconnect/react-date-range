@@ -52,6 +52,12 @@ const defaultTheme = {
     color         : '#95a5a6',
   },
 
+  DayStartOfWeek : {
+  },
+
+  DayEndOfWeek : {
+  },
+
   Weekday : {
     boxSizing     : 'border-box',
     display       : 'inline-block',
@@ -162,6 +168,10 @@ export default (customTheme = {}) => {
     DaySelected : { ...defaultTheme.DaySelected, ...customTheme.DaySelected },
 
     DayInRange : { ...defaultTheme.DayInRange, ...customTheme.DayInRange },
+
+    DayStartOfWeek : { ...defaultTheme.DayStartOfWeek, ...customTheme.DayStartOfWeek },
+
+    DayEndOfWeek : { ...defaultTheme.DayEndOfWeek, ...customTheme.DayEndOfWeek },
 
     Weekday : {
       width         : cellSize,

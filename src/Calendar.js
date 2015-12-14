@@ -168,9 +168,12 @@ class Calendar extends Component {
 
     return days.map((data, index) => {
       const { dayMoment, isPassive } = data;
+      const lastDayOfWeek = dayMoment.clone().day(firstDayOfWeek).add(6, 'days').day();
       const isSelected    = !range && (dayMoment.unix() === dateUnix);
       const isInRange     = range && checkRange(dayMoment, range);
       const isEdge        = range && checkEdges(dayMoment, range);
+      const isStartOfWeek = firstDayOfWeek === dayMoment.day();
+      const isEndOfWeek   = lastDayOfWeek === dayMoment.day();
 
       return (
         <DayCell
@@ -180,6 +183,8 @@ class Calendar extends Component {
           isSelected={ isSelected || isEdge }
           isInRange={ isInRange }
           key={ index }
+          isStartOfWeek = { isStartOfWeek }
+          isEndOfWeek = { isEndOfWeek }
         />
       );
     })
