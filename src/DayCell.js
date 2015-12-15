@@ -59,6 +59,8 @@ class DayCell extends Component {
     const inRangeStyle  = isInRange ? styles['DayInRange'] : {};
     const startOfWeekStyle  = isStartOfWeek ? styles['DayStartOfWeek'] : {};
     const endOfWeekStyle  = isEndOfWeek ? styles['DayEndOfWeek'] : {};
+    const inRangeStartOfWeekStyle  = isInRange && isStartOfWeek  ? styles['DayInRangeStartOfWeek'] : {};
+    const inRangeEndOfWeekStyle  = isInRange && isEndOfWeek ? styles['DayInRangeEndOfWeek'] : {};
 
     return {
       ...inRangeStyle,
