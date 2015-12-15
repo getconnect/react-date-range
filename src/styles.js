@@ -67,10 +67,16 @@ const defaultTheme = {
   DayInRangeStartOfWeek : {
   },
 
+  DaySelectedStartOfWeek : {
+  },
+
   DayEndOfWeek : {
   },
 
   DayInRangeEndOfWeek : {
+  },
+
+  DaySelectedEndOfWeek : {
   },
 
   Weekday : {
@@ -194,9 +200,13 @@ export default (customTheme = {}) => {
 
     DayInRangeStartOfWeek : { ...defaultTheme.DayInRangeStartOfWeek, ...customTheme.DayInRangeStartOfWeek },
 
+    DaySelectedStartOfWeek : { ...defaultTheme.DaySelectedStartOfWeek, ...customTheme.DaySelectedStartOfWeek },
+
     DayEndOfWeek : { ...defaultTheme.DayEndOfWeek, ...customTheme.DayEndOfWeek },
 
     DayInRangeEndOfWeek : { ...defaultTheme.DayInRangeEndOfWeek, ...customTheme.DayInRangeEndOfWeek },
+
+    DaySelectedEndOfWeek : { ...defaultTheme.DaySelectedEndOfWeek, ...customTheme.DaySelectedEndOfWeek },
 
     Weekday : {
       width         : cellSize,
