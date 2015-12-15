@@ -59,9 +59,11 @@ class DayCell extends Component {
     const endEdgeStyle      = isEndEdge ? styles['DayEndEdge'] : {};
     const selectedStyle     = isSelected ? styles['DaySelected'] : {};
     const inRangeStyle      = isInRange ? styles['DayInRange'] : {};
+    const todayStyle        = isToday ? styles['DayToday'] : {};
     const startOfWeekStyle  = isStartOfWeek ? styles['DayStartOfWeek'] : {};
     const endOfWeekStyle    = isEndOfWeek ? styles['DayEndOfWeek'] : {};
-    const todayStyle        = isToday ? styles['DayToday'] : {};
+    const inRangeStartOfWeekStyle  = isInRange && isStartOfWeek  ? styles['DayInRangeStartOfWeek'] : {};
+    const inRangeEndOfWeekStyle  = isInRange && isEndOfWeek ? styles['DayInRangeEndOfWeek'] : {};
 
 
     return {

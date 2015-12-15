@@ -64,7 +64,13 @@ const defaultTheme = {
   DayStartOfWeek : {
   },
 
+  DayInRangeStartOfWeek : {
+  },
+
   DayEndOfWeek : {
+  },
+
+  DayInRangeEndOfWeek : {
   },
 
   Weekday : {
@@ -186,7 +192,11 @@ export default (customTheme = {}) => {
 
     DayStartOfWeek : { ...defaultTheme.DayStartOfWeek, ...customTheme.DayStartOfWeek },
 
+    DayInRangeStartOfWeek : { ...defaultTheme.DayInRangeStartOfWeek, ...customTheme.DayInRangeStartOfWeek },
+
     DayEndOfWeek : { ...defaultTheme.DayEndOfWeek, ...customTheme.DayEndOfWeek },
+
+    DayInRangeEndOfWeek : { ...defaultTheme.DayInRangeEndOfWeek, ...customTheme.DayInRangeEndOfWeek },
 
     Weekday : {
       width         : cellSize,
