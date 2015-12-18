@@ -1,7 +1,7 @@
 {
-  "name": "react-date-range",
+  "name": "gen-intel-rdr",
   "version": "0.1.8",
-  "description": "A React component for choosing dates and date ranges.",
+  "description": "Custom fork of react-date-range",
   "main": "lib/index.js",
   "scripts": {
     "start-dev": "babel ./src --watch --out-dir ./lib & npm link && cd demo && npm install && npm link react-date-range && npm run start-dev",
@@ -9,21 +9,16 @@
     "build": "babel ./src --out-dir ./lib",
     "prepublish": "npm run build"
   },
-  "keywords": [
-    "react",
-    "date",
-    "range",
-    "datepicker",
-    "rangepicker"
-  ],
+  "keywords": [  ],
   "author": "Burak Can <neoberg@gmail.com>",
+  "contributors": [{
+      "name": "Team Connect",
+      "email": "team@getconnect.io"
+  }],
   "license": "GPL-3.0",
   "repository": {
     "type": "git",
-    "url": "http://github.com/Adphorus/react-date-range"
-  },
-  "bugs": {
-    "url": "http://github.com/Adphorus/react-date-range/issues"
+    "url": "http://github.com/getconnect/react-date-range"
   },
   "dependencies": {
     "moment": "^2.10.6",
